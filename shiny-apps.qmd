@@ -1,0 +1,74 @@
+---
+title: "Essay on Shiny Apps"
+format:
+  html:
+    toc: true
+    theme: cosmo
+    number-sections: true
+runtime: shiny
+---
+
+# 🚀 Introduction to Shiny
+
+Shiny is an R package that allows you to turn your R scripts into interactive web applications without needing HTML, CSS, or JavaScript knowledge.
+
+------------------------------------------------------------------------
+
+# 🧱 Key Components of a Shiny App
+
+A basic Shiny app has two key parts:
+
+| Component | Description |
+|----|----|
+| `ui` (User Interface) | Controls the layout and inputs/outputs |
+| `server` | Contains the logic to handle input/output and computation |
+
+### ✏️ Basic Example
+
+```{r}
+library(shiny)
+
+ui <- fluidPage(
+  titlePanel("Lucky number"),
+  sidebarLayout(
+    sidebarPanel(
+      sliderInput("num", "Choose a number:", 1, 100, 25)
+    ),
+    mainPanel(
+      textOutput("result")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$result <- renderText({ paste("You selected:", input$num) })
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+⸻
+
+### 💡 Why Use Shiny? 
+
+-   Great for **interactive dashboards**
+
+-   Powerful for **data exploration and simulation**
+
+-   Enables **non-programmers** to interact with data
+
+⸻
+
+### 📦 Deployment Options 
+
+-   **Local**: Run directly in RStudio
+
+-   **Shiny Server**: Host internally
+
+-   **shinyapps.io**: Cloud-hosted deployment
+
+⸻
+
+### **🧠 Summary**
+
+Shiny is an excellent tool for building reactive, user-friendly applications that make your R analysis come alive.

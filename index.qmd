@@ -1,0 +1,56 @@
+---
+title: "Welcome to Pin-Yi Chen's Portfolio"
+format:
+  html:
+    theme: cosmo
+    toc: true
+    page-layout: full
+---
+
+::: {.callout-note title="👋 Hello!"}
+Welcome to my personal Quarto website for Module 10. This site showcases interactive visualizations and educational resources that explore **Shiny apps**, **Shinylive**, and **dashboard building in R**.
+:::
+
+::: {.column width="65%"}
+### Hi, I'm Pin-Yi (Vivian) Chen
+
+A student from Cal Poly Pomona University with a passion for turning data into insights and building beautiful, interactive dashboards.
+
+**🎯 Career Aspiration:**\
+To become a marketing analyst with a product manager mindset, contributing to impactful tech innovation.
+
+**🛠️ Skills:**\
+- Programming: R - Visualization: ggplot2, Shiny, Quarto\
+- Machine Learning, Data Wrangling, Web Scraping
+
+**🎓 Education:**\
+MBA, Cal Poly Pomona
+:::
+
+## 🧭 Explore the Website
+
+### 🚀 Step 2: Essay on Shiny Apps
+
+::: callout-tip
+In this section, I explain what **Shiny** is and how it can be used to build interactive web apps with R. Designed as a lecture note to guide coworkers new to Shiny, you'll learn about `ui`, `server`, and how to deploy a basic app.\
+👉 [Read the Essay on Shiny Apps](shiny-apps.qmd)
+:::
+
+### 🌐 Step 3: Essay on Shinylive
+
+::: callout-tip
+**Shinylive** allows Shiny apps to run entirely in the browser – no R server needed! In this lecture, I explain the technology, pros and cons, and key differences from traditional Shiny apps.\
+👉 [Read the Essay on Shinylive](shiny-live.qmd)
+:::
+
+### 📊 Step 4: Interactive Dashboard
+
+::: callout-tip
+An interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies by rating, release year, and more – with search filters and visual summaries.\
+👉 [Visit the Dashboard](dashboard.qmd)
+:::
+
+## 🌍 Publishing Info
+
+-   ✅ This site is published to both [**Quarto Pub**](https://quarto.pub/your-link) and [**GitHub Pages**](https://github.com/yourusername/yourrepo).
+-   Built with ❤️ using R, Quarto, Shiny, and Shinylive.

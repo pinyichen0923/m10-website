@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Pin-Yi Chen"
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Dashboard
+        href: dashboard.qmd
+      - text: Shiny Apps
+        href: shiny-apps.qmd
+      - text: Shinylive
+        href: shiny-live.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+

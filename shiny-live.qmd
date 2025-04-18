@@ -1,0 +1,46 @@
+---
+title: "Essay on Shinylive"
+format:
+  html:
+    toc: true
+    theme: cosmo
+    number-sections: true
+---
+
+## 🌐 What is Shinylive?
+
+**Shinylive** allows you to run Shiny apps **entirely in the browser**, powered by **WebAssembly**. No R server or shinyapps.io is required.
+
+## ⚙️ How Shinylive Works
+
+-   Your R code is compiled to WebAssembly
+-   The entire app runs **client-side** in the browser
+-   It's deployed as a **static HTML file**
+
+## 🔁 Shiny vs. Shinylive – What’s the Difference?
+
+| Feature         | Shiny              | Shinylive                |
+|-----------------|--------------------|--------------------------|
+| Server Required | ✅ Yes             | ❌ No                    |
+| Hosting         | shinyapps.io, etc. | GitHub Pages, Quarto Pub |
+| Reactivity      | Server-side        | Browser-side (client)    |
+| Setup           | More complex       | Easier / Static files    |
+| Performance     | Scales well        | Lightweight              |
+
+## ✅ Pros of Shinylive
+
+-   Easy to share: just host static files
+-   No server maintenance
+-   Great for small tools, teaching, or personal demos
+
+## ⚠️ Cons of Shinylive
+
+-   Performance may lag for large apps
+-   Limited support for some R packages (e.g., those that require C/C++ backend)
+-   No persistent storage or backend features
+
+## 🧠 Summary
+
+**Shinylive** is a game-changer for small, serverless R apps — fast, simple, and ideal for educational content, prototypes, or personal portfolios.
+
+Use **Shiny** for enterprise apps. Use **Shinylive** for quick sharing.
