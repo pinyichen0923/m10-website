@@ -11,6 +11,13 @@ format:
 Welcome to my personal Quarto website for Module 10. This site showcases interactive visualizations and educational resources that explore **Shiny apps**, **Shinylive**, and **dashboard building in R**.
 :::
 
+## 👤 About Me
+
+:::::::: columns
+::: {.column width="35%"}
+![My Photo](photo.jpg){width="100%"}
+:::
+
 ::: {.column width="65%"}
 ### Hi, I'm Pin-Yi (Vivian) Chen
 
@@ -52,5 +59,6 @@ An interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies b
 
 ## 🌍 Publishing Info
 
--   ✅ This site is published to both [**Quarto Pub**](https://quarto.pub/your-link) and [**GitHub Pages**](https://github.com/yourusername/yourrepo).
+-   ✅ This site is published to both [**Quarto Pub**](https://njones.quarto.pub/m10-website) and [**GitHub Pages**](https://github.com/pinyichen0923/m10-website).
 -   Built with ❤️ using R, Quarto, Shiny, and Shinylive.
+::::::::

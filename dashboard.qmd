@@ -43,64 +43,6 @@ top250_movies <- tibble::tibble(
 
 This dashboard visualizes the IMDb Top 250 movies, showing trends in ratings and allowing interactive exploration by year.
 
-## 🏆 Highlights {.value-box}
-
-```{r}
-valueBox(
-  value = top250_movies$title[1],
-  caption = paste0("Highest Rating: ", top250_movies$rating[1]),
-  icon = "fa-film",
-  color = "primary"
-)
-valueBox(
-  value = min(top250_movies$year, na.rm = TRUE),
-  caption = "Oldest Movie Release Year",
-  icon = "fa-hourglass-start",
-  color = "info"
-)
-valueBox(
-  value = max(top250_movies$year, na.rm = TRUE),
-  caption = "Newest Movie Release Year",
-  icon = "fa-calendar-check",
-  color = "success"
-)
-```
-
-## **📈 Rating Distribution**
-
-```{r}
-ggplot(top250_movies, aes(x = rating)) +
-  geom_histogram(bins = 20, fill = "steelblue", color = "white") +
-  labs(title = "Distribution of IMDb Ratings", x = "Rating", y = "Count")
-```
-
-## **📊 Number of Top Movies by Year**
-
-```{r}
-top250_movies |>
-  count(year) |>
-  ggplot(aes(x = year, y = n)) +
-  geom_col(fill = "coral") +
-  labs(title = "Number of Top Movies by Release Year", x = "Year", y = "Number of Movies") +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
-```
-
-## **🔍 Movie Search**
-
-```{r}
-reactable(
-  top250_movies,
-  searchable = TRUE,
-  filterable = TRUE,
-  defaultPageSize = 10,
-  columns = list(
-    title = colDef(name = "Movie Title"),
-    year = colDef(name = "Year"),
-    rating = colDef(name = "Rating", format = colFormat(digits = 1))
-  )
-)
-```
-
 ------------------------------------------------------------------------
 
 ## 🏆 Key Highlights
@@ -124,3 +66,40 @@ Released in **`r max(top250_movies$year, na.rm = TRUE)`**
 :::
 
 ------------------------------------------------------------------------
+
+## **📈 Rating Distribution**
+
+```{r}
+ggplot(top250_movies, aes(x = rating)) +
+  geom_histogram(bins = 20, fill = "steelblue", color = "white") +
+  labs(title = "Distribution of IMDb Ratings", x = "Rating", y = "Count")
+```
+
+## **📊 Number of Top Movies by Year**
+
+```{r}
+top250_movies |>
+  count(year) |>
+  ggplot(aes(x = year, y = n)) +
+  geom_col(fill = "coral") +
+  labs(title = "Number of Top Movies by Release Year", x = "Year", y = "Number of Movies") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+## **🔍 Movie Look Up**
+
+```{r}
+reactable(
+  top250_movies,
+  searchable = TRUE,
+  filterable = TRUE,
+  defaultPageSize = 10,
+  columns = list(
+    title = colDef(name = "Movie Title"),
+    year = colDef(name = "Year"),
+    rating = colDef(name = "Rating", format = colFormat(digits = 1))
+  )
+)
+```
+
+

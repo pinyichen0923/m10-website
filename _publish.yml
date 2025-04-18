@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: "pinyichen0923"
+      url: "https://njones.quarto.pub/m10-website"
