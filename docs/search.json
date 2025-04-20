@@ -1,0 +1,128 @@
+[
+  {
+    "objectID": "shiny-apps.html",
+    "href": "shiny-apps.html",
+    "title": "Essay on Shiny Apps",
+    "section": "",
+    "text": "1 🚀 Introduction to Shiny\nShiny is an R package that allows you to turn your R scripts into interactive web applications without needing HTML, CSS, or JavaScript knowledge.\n\n\n\n2 🧱 Key Components of a Shiny App\nA basic Shiny app has two key parts:\n\n\n\nComponent\nDescription\n\n\n\n\nui (User Interface)\nControls the layout and inputs/outputs\n\n\nserver\nContains the logic to handle input/output and computation\n\n\n\n\n2.0.1 ✏️ Basic Example\n\nlibrary(shiny)\n\nui &lt;- fluidPage(\n  titlePanel(\"Lucky number\"),\n  sidebarLayout(\n    sidebarPanel(\n      sliderInput(\"num\", \"Choose a number:\", 1, 100, 25)\n    ),\n    mainPanel(\n      textOutput(\"result\")\n    )\n  )\n)\n\nserver &lt;- function(input, output) {\n  output$result &lt;- renderText({ paste(\"You selected:\", input$num) })\n}\n\nshinyApp(ui = ui, server = server)\n\n\n\n\n⸻\n\n\n2.0.2 💡 Why Use Shiny?\n\nGreat for interactive dashboards\nPowerful for data exploration and simulation\nEnables non-programmers to interact with data\n\n⸻\n\n\n2.0.3 📦 Deployment Options\n\nLocal: Run directly in RStudio\nShiny Server: Host internally\nshinyapps.io: Cloud-hosted deployment\n\n⸻\n\n\n2.0.4 🧠 Summary\nShiny is an excellent tool for building reactive, user-friendly applications that make your R analysis come alive."
+  },
+  {
+    "objectID": "shiny-live.html",
+    "href": "shiny-live.html",
+    "title": "Essay on Shinylive",
+    "section": "",
+    "text": "Shinylive allows you to run Shiny apps entirely in the browser, powered by WebAssembly. No R server or shinyapps.io is required."
+  },
+  {
+    "objectID": "shiny-live.html#what-is-shinylive",
+    "href": "shiny-live.html#what-is-shinylive",
+    "title": "Essay on Shinylive",
+    "section": "",
+    "text": "Shinylive allows you to run Shiny apps entirely in the browser, powered by WebAssembly. No R server or shinyapps.io is required."
+  },
+  {
+    "objectID": "shiny-live.html#how-shinylive-works",
+    "href": "shiny-live.html#how-shinylive-works",
+    "title": "Essay on Shinylive",
+    "section": "2 ⚙️ How Shinylive Works",
+    "text": "2 ⚙️ How Shinylive Works\n\nYour R code is compiled to WebAssembly\nThe entire app runs client-side in the browser\nIt’s deployed as a static HTML file"
+  },
+  {
+    "objectID": "shiny-live.html#shiny-vs.-shinylive-whats-the-difference",
+    "href": "shiny-live.html#shiny-vs.-shinylive-whats-the-difference",
+    "title": "Essay on Shinylive",
+    "section": "3 🔁 Shiny vs. Shinylive – What’s the Difference?",
+    "text": "3 🔁 Shiny vs. Shinylive – What’s the Difference?\n\n\n\nFeature\nShiny\nShinylive\n\n\n\n\nServer Required\n✅ Yes\n❌ No\n\n\nHosting\nshinyapps.io, etc.\nGitHub Pages, Quarto Pub\n\n\nReactivity\nServer-side\nBrowser-side (client)\n\n\nSetup\nMore complex\nEasier / Static files\n\n\nPerformance\nScales well\nLightweight"
+  },
+  {
+    "objectID": "shiny-live.html#pros-of-shinylive",
+    "href": "shiny-live.html#pros-of-shinylive",
+    "title": "Essay on Shinylive",
+    "section": "4 ✅ Pros of Shinylive",
+    "text": "4 ✅ Pros of Shinylive\n\nEasy to share: just host static files\nNo server maintenance\nGreat for small tools, teaching, or personal demos"
+  },
+  {
+    "objectID": "shiny-live.html#cons-of-shinylive",
+    "href": "shiny-live.html#cons-of-shinylive",
+    "title": "Essay on Shinylive",
+    "section": "5 ⚠️ Cons of Shinylive",
+    "text": "5 ⚠️ Cons of Shinylive\n\nPerformance may lag for large apps\nLimited support for some R packages (e.g., those that require C/C++ backend)\nNo persistent storage or backend features"
+  },
+  {
+    "objectID": "shiny-live.html#summary",
+    "href": "shiny-live.html#summary",
+    "title": "Essay on Shinylive",
+    "section": "6 🧠 Summary",
+    "text": "6 🧠 Summary\nShinylive is a game-changer for small, serverless R apps — fast, simple, and ideal for educational content, prototypes, or personal portfolios.\nUse Shiny for enterprise apps. Use Shinylive for quick sharing."
+  },
+  {
+    "objectID": "dashboard.html",
+    "href": "dashboard.html",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "",
+    "text": "# web scraping\nurl &lt;- \"https://www.imdb.com/chart/top/?ref_=nv_mv_250\"\n\nraw_script &lt;- read_html(url) |&gt;\n  html_element(\"script#__NEXT_DATA__\") |&gt;  # Escape the id selector\n  html_text()\n\ntop_movies &lt;- str_match_all(raw_script, '\"titleText\":\\\\{\"text\":\"(.*?)\"')[[1]][,2]\nyear &lt;- str_match_all(raw_script, '\"releaseYear\":\\\\{\"year\":(\\\\d{4})')[[1]][,2]\nrating &lt;- str_match_all(raw_script, '\"aggregateRating\":(\\\\d+(\\\\.\\\\d+)?)')[[1]][,2]\n\n# Create as a dataframe\ntop250_movies &lt;- tibble::tibble(\n  title = top_movies,\n  year = as.integer(year),\n  rating = as.numeric(rating)\n) |&gt; \n  arrange(desc(rating))"
+  },
+  {
+    "objectID": "dashboard.html#overview",
+    "href": "dashboard.html#overview",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "🎬 Overview",
+    "text": "🎬 Overview\nThis dashboard visualizes the IMDb Top 250 movies, showing trends in ratings and allowing interactive exploration by year."
+  },
+  {
+    "objectID": "dashboard.html#key-highlights",
+    "href": "dashboard.html#key-highlights",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "🏆 Key Highlights",
+    "text": "🏆 Key Highlights\n\n\n\n\n\n\n🎬 Highest Rated Movie\n\n\n\nThe Shawshank Redemption with a rating of 9.3\n\n\n\n\n\n\n\n\n🕰️ Oldest Movie\n\n\n\nReleased in 1921\n\n\n\n\n\n\n\n\n🆕 Newest Movie\n\n\n\nReleased in 2024"
+  },
+  {
+    "objectID": "dashboard.html#rating-distribution",
+    "href": "dashboard.html#rating-distribution",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "📈 Rating Distribution",
+    "text": "📈 Rating Distribution\n\nggplot(top250_movies, aes(x = rating)) +\n  geom_histogram(bins = 20, fill = \"steelblue\", color = \"white\") +\n  labs(title = \"Distribution of IMDb Ratings\", x = \"Rating\", y = \"Count\")"
+  },
+  {
+    "objectID": "dashboard.html#number-of-top-movies-by-year",
+    "href": "dashboard.html#number-of-top-movies-by-year",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "📊 Number of Top Movies by Year",
+    "text": "📊 Number of Top Movies by Year\n\ntop250_movies |&gt;\n  count(year) |&gt;\n  ggplot(aes(x = year, y = n)) +\n  geom_col(fill = \"coral\") +\n  labs(title = \"Number of Top Movies by Release Year\", x = \"Year\", y = \"Number of Movies\") +\n  theme(axis.text.x = element_text(angle = 45, hjust = 1))"
+  },
+  {
+    "objectID": "dashboard.html#movie-look-up",
+    "href": "dashboard.html#movie-look-up",
+    "title": "IMDb Top 250 Movie Dashboard",
+    "section": "🔍 Movie Look Up",
+    "text": "🔍 Movie Look Up\n\nreactable(\n  top250_movies,\n  searchable = TRUE,\n  filterable = TRUE,\n  defaultPageSize = 10,\n  columns = list(\n    title = colDef(name = \"Movie Title\"),\n    year = colDef(name = \"Year\"),\n    rating = colDef(name = \"Rating\", format = colFormat(digits = 1))\n  )\n)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "",
+    "text": "👋 Hello!\n\n\n\nWelcome to my personal Quarto website for Module 10. This site showcases interactive visualizations and educational resources that explore Shiny apps, Shinylive, and dashboard building in R."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "👤 About Me",
+    "text": "👤 About Me\n\n\n\n\n\nMy Photo\n\n\n\n\nHi, I’m Pin-Yi (Vivian) Chen\nA student from Cal Poly Pomona University with a passion for turning data into insights and building beautiful, interactive dashboards.\n🎯 Career Aspiration:\nTo become a marketing analyst with a product manager mindset, contributing to impactful tech innovation.\n🛠️ Skills:\n- Programming: R - Visualization: ggplot2, Shiny, Quarto\n- Machine Learning, Data Wrangling, Web Scraping\n🎓 Education:\nMBA, Cal Poly Pomona\n\n\n🧭 Explore the Website\n\n🚀 Step 2: Essay on Shiny Apps\n\n\n\n\n\n\nTip\n\n\n\nIn this section, I explain what Shiny is and how it can be used to build interactive web apps with R. Designed as a lecture note to guide coworkers new to Shiny, you’ll learn about ui, server, and how to deploy a basic app.\n👉 Read the Essay on Shiny Apps\n\n\n\n\n🌐 Step 3: Essay on Shinylive\n\n\n\n\n\n\nTip\n\n\n\nShinylive allows Shiny apps to run entirely in the browser – no R server needed! In this lecture, I explain the technology, pros and cons, and key differences from traditional Shiny apps.\n👉 Read the Essay on Shinylive\n\n\n\n\n📊 Step 4: Interactive Dashboard\n\n\n\n\n\n\nTip\n\n\n\nAn interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies by rating, release year, and more – with search filters and visual summaries.\n👉 Visit the Dashboard\n\n\n\n\n🌍 Publishing Info\n\n✅ This site is published to both Quarto Pub and GitHub Pages.\nBuilt with ❤️ using R, Quarto, Shiny, and Shinylive."
+  },
+  {
+    "objectID": "index.html#explore-the-website",
+    "href": "index.html#explore-the-website",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "🧭 Explore the Website",
+    "text": "🧭 Explore the Website\n\n🚀 Step 2: Essay on Shiny Apps\n\n\n\n\n\n\nTip\n\n\n\nIn this section, I explain what Shiny is and how it can be used to build interactive web apps with R. Designed as a lecture note to guide coworkers new to Shiny, you’ll learn about ui, server, and how to deploy a basic app.\n👉 Read the Essay on Shiny Apps\n\n\n\n\n🌐 Step 3: Essay on Shinylive\n\n\n\n\n\n\nTip\n\n\n\nShinylive allows Shiny apps to run entirely in the browser – no R server needed! In this lecture, I explain the technology, pros and cons, and key differences from traditional Shiny apps.\n👉 Read the Essay on Shinylive\n\n\n\n\n📊 Step 4: Interactive Dashboard\n\n\n\n\n\n\nTip\n\n\n\nAn interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies by rating, release year, and more – with search filters and visual summaries.\n👉 Visit the Dashboard"
+  },
+  {
+    "objectID": "index.html#publishing-info",
+    "href": "index.html#publishing-info",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "🌍 Publishing Info",
+    "text": "🌍 Publishing Info\n\n✅ This site is published to both Quarto Pub and GitHub Pages.\nBuilt with ❤️ using R, Quarto, Shiny, and Shinylive."
+  }
+]

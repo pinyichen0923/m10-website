@@ -59,6 +59,6 @@ An interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies b
 
 ## 🌍 Publishing Info
 
--   ✅ This site is published to both [**Quarto Pub**](https://njones.quarto.pub/m10-website) and [**GitHub Pages**](https://github.com/pinyichen0923/m10-website).
+-   ✅ This site is published to both [**Quarto Pub**](https://vivian-chen.quarto.pub/pinyi/) and [**GitHub Pages**](https://github.com/pinyichen0923/m10-website).
 -   Built with ❤️ using R, Quarto, Shiny, and Shinylive.
 ::::::::
