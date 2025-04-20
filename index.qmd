@@ -15,7 +15,7 @@ Welcome to my personal Quarto website for Module 10. This site showcases interac
 
 :::::::: columns
 ::: {.column width="35%"}
-![My Photo](photo.jpg){width="100%"}
+![My Photo](photo.jpg){width="80%"}
 :::
 
 ::: {.column width="65%"}

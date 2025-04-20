@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "",
+    "text": "👋 Hello!\n\n\n\nWelcome to my personal Quarto website for Module 10. This site showcases interactive visualizations and educational resources that explore Shiny apps, Shinylive, and dashboard building in R."
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "👤 About Me",
+    "text": "👤 About Me\n\n\n\n\n\nMy Photo\n\n\n\n\nHi, I’m Pin-Yi (Vivian) Chen\nA student from Cal Poly Pomona University with a passion for turning data into insights and building beautiful, interactive dashboards.\n🎯 Career Aspiration:\nTo become a marketing analyst with a product manager mindset, contributing to impactful tech innovation.\n🛠️ Skills:\n- Programming: R - Visualization: ggplot2, Shiny, Quarto\n- Machine Learning, Data Wrangling, Web Scraping\n🎓 Education:\nMBA, Cal Poly Pomona\n\n\n🧭 Explore the Website\n\n🚀 Step 2: Essay on Shiny Apps\n\n\n\n\n\n\nTip\n\n\n\nIn this section, I explain what Shiny is and how it can be used to build interactive web apps with R. Designed as a lecture note to guide coworkers new to Shiny, you’ll learn about ui, server, and how to deploy a basic app.\n👉 Read the Essay on Shiny Apps\n\n\n\n\n🌐 Step 3: Essay on Shinylive\n\n\n\n\n\n\nTip\n\n\n\nShinylive allows Shiny apps to run entirely in the browser – no R server needed! In this lecture, I explain the technology, pros and cons, and key differences from traditional Shiny apps.\n👉 Read the Essay on Shinylive\n\n\n\n\n📊 Step 4: Interactive Dashboard\n\n\n\n\n\n\nTip\n\n\n\nAn interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies by rating, release year, and more – with search filters and visual summaries.\n👉 Visit the Dashboard\n\n\n\n\n🌍 Publishing Info\n\n✅ This site is published to both Quarto Pub and GitHub Pages.\nBuilt with ❤️ using R, Quarto, Shiny, and Shinylive."
+  },
+  {
+    "objectID": "index.html#explore-the-website",
+    "href": "index.html#explore-the-website",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "🧭 Explore the Website",
+    "text": "🧭 Explore the Website\n\n🚀 Step 2: Essay on Shiny Apps\n\n\n\n\n\n\nTip\n\n\n\nIn this section, I explain what Shiny is and how it can be used to build interactive web apps with R. Designed as a lecture note to guide coworkers new to Shiny, you’ll learn about ui, server, and how to deploy a basic app.\n👉 Read the Essay on Shiny Apps\n\n\n\n\n🌐 Step 3: Essay on Shinylive\n\n\n\n\n\n\nTip\n\n\n\nShinylive allows Shiny apps to run entirely in the browser – no R server needed! In this lecture, I explain the technology, pros and cons, and key differences from traditional Shiny apps.\n👉 Read the Essay on Shinylive\n\n\n\n\n📊 Step 4: Interactive Dashboard\n\n\n\n\n\n\nTip\n\n\n\nAn interactive dashboard built using Quarto and R! Explore IMDb Top 250 movies by rating, release year, and more – with search filters and visual summaries.\n👉 Visit the Dashboard"
+  },
+  {
+    "objectID": "index.html#publishing-info",
+    "href": "index.html#publishing-info",
+    "title": "Welcome to Pin-Yi Chen’s Portfolio",
+    "section": "🌍 Publishing Info",
+    "text": "🌍 Publishing Info\n\n✅ This site is published to both Quarto Pub and GitHub Pages.\nBuilt with ❤️ using R, Quarto, Shiny, and Shinylive."
+  }
+]
